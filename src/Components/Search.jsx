@@ -12,6 +12,9 @@ const Search = () => {
   const onHandleSubmit = (e) => {
     e.preventDefault();
 
+    console.log(category);
+    console.log(searchTerm);
+
     navigate({
       pathname: "search",
       search: `${createSearchParams({
@@ -42,13 +45,13 @@ const Search = () => {
           onChange={(e) => setCategory(e.target.value)}
           className="p-2 bg-gray-300 text-black border text-xs xl:text-sm"
         >
-          <option value="">All</option>
-          <option value="">Deals</option>
-          <option value="">Amazon</option>
-          <option value="">Fashion</option>
-          <option value="">Computers</option>
-          <option value="">Home</option>
-          <option value="">Mobiles</option>
+          <option value="All">All</option>
+          <option value="Deals">Deals</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Computers">Computers</option>
+          <option value="Home">Home</option>
+          <option value="Mobiles">Mobiles</option>
         </select>
 
         <input
@@ -62,7 +65,7 @@ const Search = () => {
         </button>
       </div>
       {suggestions && (
-        <div className="bg-white text-black w-full z-40 absolute">
+        <div className="bg-white text-black w-full z-40 cursor-pointer absolute">
           {suggestions
             .filter((suggestion) => {
               const currentSearchTerm = searchTerm.toLowerCase();

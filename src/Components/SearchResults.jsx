@@ -10,7 +10,11 @@ const SearchResults = () => {
   const [seachParams] = useSearchParams();
   const [products, setProducts] = useState(null);
 
-  // console.log(seachParams);
+  console.log(seachParams);
+  const searchTerm = seachParams.get("searchTerm");
+  const category = seachParams.get("category");
+  console.log(searchTerm);
+  console.log(category);
 
   const getSearchResults = () => {
     const searchTerm = seachParams.get("searchTerm");
